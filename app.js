@@ -6,6 +6,8 @@ const path = require('path');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
 app.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
@@ -18,5 +20,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => {
-  debug(`listening on port + ${chalk.green('3000')}`);
+  debug(`listening on port + ${chalk.green(port)}`);
 });
