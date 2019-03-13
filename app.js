@@ -15,10 +15,10 @@ app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist'))
 app.use('/js', express.static(path.join(__dirname, '/node_modules/popper.js/dist')));
 app.use('/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
 app.set('views', './src/views');
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('index', { list: ['a', 'b'] });
+  res.render('index', { list: ['a', 'b'], title: 'EJS Libary' });
 });
 
 app.listen(port, () => {
