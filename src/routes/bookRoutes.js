@@ -57,26 +57,23 @@ function router(nav) {
 
   bookRouter.route('/')
     .get((req, res) => {
-      const request = new sql.Request();
+      (async function query() {
+        const request = new sql.Request();
 
-      request.query('select * from books')
-        .then((result) => {
-          debug(result);
-          res.render('books',
-            {
-              nav,
-              title: 'Libary',
-              books: result.recordset
-            });
-        });
+        const result = request.query('select * from books');
+        debug(result);
+        res.render('books',
+          {
+            nav,
+            title: 'Libary',
+            books: result.recordset
+          });
+      }());
     });
 
   bookRouter.route('/:id')
     .get((req, res) => {
       const { id } = req.params;
-      // debug(id);
-      // console.log(id);
-      // console.log(req.params);
       res.render('book',
         {
           nav,
