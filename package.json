@@ -7,7 +7,7 @@
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "fulldebug": "@powershell -Command $env:DEBUG='*';node app.js",
-    "debug": "@powershell -Command $env:DEBUG='app:*';nodemon node app.js",
+    "debug": "@powershell -Command $env:DEBUG='app,app:*';nodemon node app.js",
     "lint": "eslint app.js"
   },
   "author": "Peter Mei",
