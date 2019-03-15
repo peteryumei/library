@@ -3,6 +3,30 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
+const sql = require('mssql');
+
+/* (async () => {
+  try {
+    await sql.connect('mssql://pmei:pmei@localhost/library');
+    const result = await sql.query`select * from books where id = 2`;
+    console.dir(result);
+  } catch (err) {
+    debug(err);
+  }
+})(); */
+
+const config = {
+  user: 'pmei',
+  password: 'pmei',
+  server: 'localhost', // You can use 'localhost\\instance' to connect to named instance
+  database: 'library',
+
+  options: {
+    encrypt: true // Use this if you're on Windows Azure
+  }
+};
+
+sql.connect(config).catch(err => debug(err));
 
 const app = express();
 const port = process.env.PORT || 3000;
