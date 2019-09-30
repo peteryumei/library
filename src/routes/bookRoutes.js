@@ -60,7 +60,7 @@ function router(nav) {
       (async function query() {
         const request = new sql.Request();
         const { recordset } = await request.query('select * from books');
-        debug(result);
+        // debug(result);
         res.render('books',
           {
             nav,
