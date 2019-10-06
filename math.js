@@ -1,4 +1,4 @@
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [2.10,7.90,3.0,5.70,5.20,1.20,8.60,4.0,7.30];
 let sum = 0;
 let total = 0;
 

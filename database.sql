@@ -13,3 +13,23 @@ insert into books (id, title, author) values
 (6, 'The Wind in the Willows', 'Kenneth Grahame'),
 (7, 'Life On The Mississippi', 'Mark Twain'),
 (8, 'Childhood', 'Lev Nikolayevich Tolstoy')
+
+go
+
+create table dbo.authors (id int not null,
+				name varchar(255),
+				contact varchar(255))
+
+go
+
+insert into dbo.authors (id, name, contact) values
+(1, 'lev Nikolayevich Tolstoy', 'warandpeace@gmail.com'),
+(2, 'Victor Hugo', '' ),
+(3, 'H. G. Wells', 'gh@gmail'),
+(4, 'Jules Verne', 'test@gmail'),
+(5, 'Henry Kuttner', 'henry@gmail.com'),
+(6, 'Kenneth Grahame', 'kenneth@yahoo.com'),
+(7, 'Mark Twain', 'mississippi@gmail.com'),
+(8, 'Lev Nikolayevich Tolstoy', 'childhood@gmail.com')
+
+go
