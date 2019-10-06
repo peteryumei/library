@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const path = require('path');
 const sql = require('mssql');
 
+
 /* (async () => {
   try {
     await sql.connect('mssql://pmei:pmei@localhost/library');
@@ -32,6 +33,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(morgan('tiny'));
+app.use((req, res, next) => {
+  debug('my middleware');
+  next();
+});
 app.use(express.static(path.join(__dirname, '/public/')));
 app.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
 app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist')));

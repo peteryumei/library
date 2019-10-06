@@ -1,13 +1,13 @@
 {
   "name": "library",
   "version": "1.0.0",
-  "description": "",
+  "description": "node.js application",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "fulldebug": "@powershell -Command $env:DEBUG='*';node app.js",
-    "debug": "@powershell -Command $env:DEBUG='app';node app.js",
+    "debug": "@powershell -Command $env:DEBUG='app,app.*';nodemon node app.js",
     "lint": "eslint app.js"
   },
   "author": "Peter Mei",
@@ -16,20 +16,25 @@
     "bootstrap": "4.3.1",
     "chalk": "2.4.2",
     "debug": ">=2.6.9",
+    "ejs": "2.6.1",
     "express": "^4.16.4",
     "jquery": "3.3.1",
     "morgan": "1.9.1",
+    "mssql": "5.0.3",
     "nodemon": "1.18.10",
-    "popper.js": "1.14.7"
+    "popper.js": "1.14.7",
+    "pug": "2.0.3"
   },
   "devDependencies": {
     "eslint": "5.15.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.16.0"
   },
-  "nodemonConfig":{
-    "restartable":"rs",
-    "ignore":["node_modules/**/nodemodules"],
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/nodemodules"
+    ],
     "delay": "2500",
     "env": {
       "NODE_ENV": "development",
